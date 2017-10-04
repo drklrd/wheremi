@@ -21,13 +21,19 @@ public class MainActivity extends AppCompatActivity {
     LocationListener locationListener;
 
     public void updateLocation(Location location){
-        Log.i("Changed***",location.toString());
+
+        TextView altitudeText = (TextView) findViewById(R.id.altitudeText);
+        TextView latitudeText = (TextView) findViewById(R.id.latitudeText);
+        TextView longitudeText = (TextView) findViewById(R.id.longitudeText);
+
+        altitudeText.setText(location.getAltitude() + "m");
+        latitudeText.setText(String.valueOf(location.getLatitude()));
+        longitudeText.setText(String.valueOf(location.getLongitude()));
     }
 
     public void startListening(){
 
         if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
-            Log.i("PHEI","KANCHGGA***");
             locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
         }
     }
@@ -51,15 +57,8 @@ public class MainActivity extends AppCompatActivity {
         locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-                Log.i("$$$$$$$$$$$$$","**************");
                 updateLocation(location);
-                TextView altitudeText = (TextView) findViewById(R.id.altitudeText);
-                TextView latitudeText = (TextView) findViewById(R.id.latitudeText);
-                TextView longitudeText = (TextView) findViewById(R.id.longitudeText);
 
-                altitudeText.setText(location.getAltitude() + "m");
-                latitudeText.setText(String.valueOf(location.getLatitude()));
-                longitudeText.setText(String.valueOf(location.getLongitude()));
             }
 
             @Override
@@ -79,25 +78,19 @@ public class MainActivity extends AppCompatActivity {
         };
 
         if(Build.VERSION.SDK_INT < 23) {
-            Log.i("HELLO***","NICE222");
-
             startListening();
         }else{
-
             if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1);
             }else{
-
                 locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0,locationListener);
                 Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
                 if(location != null){
                     updateLocation(location);
                 }else{
-                    Log.i("BABBA","BBBA**");
                     startListening();
                 }
-
             }
         }
     }
