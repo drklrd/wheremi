@@ -13,6 +13,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
         TextView altitudeText = (TextView) findViewById(R.id.altitudeText);
         TextView latitudeText = (TextView) findViewById(R.id.latitudeText);
         TextView longitudeText = (TextView) findViewById(R.id.longitudeText);
+        TextView gettingText = (TextView) findViewById(R.id.gettingText);
+
+        gettingText.setVisibility(View.INVISIBLE);
 
         altitudeText.setText(location.getAltitude() + "m");
         latitudeText.setText(String.valueOf(location.getLatitude()));
