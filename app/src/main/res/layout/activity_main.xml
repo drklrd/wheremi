@@ -17,14 +17,41 @@
         tools:layout_editor_absoluteY="0dp" />
 
     <TextView
-        android:id="@+id/altitudeText"
-        android:layout_width="111dp"
-        android:layout_height="59dp"
+        android:id="@+id/latitudeText"
+        android:layout_width="187dp"
+        android:layout_height="53dp"
         android:layout_marginLeft="160dp"
-        android:layout_marginTop="307dp"
+        android:layout_marginTop="333dp"
         android:fontFamily="cursive"
         android:padding="7dp"
-        android:text="1200m"
+        android:textColor="@android:color/background_light"
+        android:textColorHighlight="@android:color/background_light"
+        android:textSize="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/longitudeText"
+        android:layout_width="187dp"
+        android:layout_height="53dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="417dp"
+        android:fontFamily="cursive"
+        android:padding="7dp"
+        android:textColor="@android:color/background_light"
+        android:textColorHighlight="@android:color/background_light"
+        android:textSize="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/altitudeText"
+        android:layout_width="187dp"
+        android:layout_height="53dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="256dp"
+        android:fontFamily="cursive"
+        android:padding="7dp"
         android:textColor="@android:color/background_light"
         android:textColorHighlight="@android:color/background_light"
         android:textSize="30dp"
@@ -36,10 +63,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="256dp"
+        android:layout_marginTop="203dp"
         android:fontFamily="cursive"
         android:padding="7dp"
         android:text="Altitude"
+        android:textColor="@android:color/background_light"
+        android:textSize="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="53dp"
+        android:layout_marginTop="282dp"
+        android:fontFamily="cursive"
+        android:padding="7dp"
+        android:text="Latitude"
+        android:textColor="@android:color/background_light"
+        android:textSize="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="364dp"
+        android:fontFamily="cursive"
+        android:padding="7dp"
+        android:text="Longitude"
         android:textColor="@android:color/background_light"
         android:textSize="30dp"
         app:layout_constraintLeft_toLeftOf="parent"
